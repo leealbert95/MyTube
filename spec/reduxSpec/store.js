@@ -9,7 +9,8 @@ describe('store', function() {
     expect(actual).to.deep.equal(expected);
   });
   it('should have a state with a .currentVideo field', function() {
-    expect(store.getState().currentVideo).to.be.null;
+    let state = store.getState()
+    expect(state.hasOwnProperty('currentVideo')).to.be.true;
   });
   it('should have a state with a .videoList field', function() {
     expect(store.getState().videoList).to.be.an('array');
